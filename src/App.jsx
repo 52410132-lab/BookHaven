@@ -27,7 +27,7 @@ function App() {
   }
 
   return (
-    <BrowserRouter>
+    <BrowserRouter basename="/BookHaven">
       <Navbar cartCount={cart.length} />
 
       <Routes>
