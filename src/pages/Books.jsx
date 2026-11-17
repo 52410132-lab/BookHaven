@@ -2,7 +2,7 @@ import { useState } from "react";
 
 const books = [
 {
-id: 1,
+id: 1, // first book 
 title: "The Great Gatsby",
 author: "F. Scott Fitzgerald",
 category: "Fiction",
@@ -47,31 +47,33 @@ title: "The Alchemist",
 author: "Paulo Coelho",
 category: "Fiction",
 price: 14,
+
 image: "https://covers.openlibrary.org/b/isbn/9780061122415-L.jpg"
 }
 ];
 
 function Books({ addToCart }) {
 const [search, setSearch] = useState("");
-const [category, setCategory] = useState("All");
+const [category, setCategory] = useState("All");//all books not one specific 
 
-const filteredBooks = books.filter((book) => {
-const matchesSearch =
-book.title.toLowerCase().includes(search.toLowerCase()) ||
+const filteredBooks = books.filter((book) => {//new array contain book that match condition in search 
+ // if the word in search is in the title of the book 
+    const matchesSearch =
+book.title.toLowerCase().includes(search.toLowerCase()) ||//match hsb cap or lower 
 book.author.toLowerCase().includes(search.toLowerCase());
 
 const matchesCategory =
-category === "All" || book.category === category;
-
+category === "All" || book.category === category;//if the book matches category
+//all=all categories 
 return matchesSearch && matchesCategory;
-});
+});//if true show the book 
 
 return (
 <div className="page">
 <h1>Explore Our Books 📚</h1>
 <p>Find your next favorite book!</p>
 
-<div className="filters">
+<div className="filters">{/*search for book title or type*/}
 <input
 type="text"
 placeholder="Search by title or author..."
@@ -95,10 +97,15 @@ Self Development
 </div>
 
 <div className="books-grid">
-{filteredBooks.length > 0 ? (
-filteredBooks.map((book) => (
+    {/*css class form of cart*/}
+ {/*nb of books>0 show book or no books found*/}
+ {/*see every book and do book cart price */}
+{filteredBooks.length > 0 ? (    
+filteredBooks.map((book) => (    
 <div className="book-card" key={book.id}>
+     {/*css give id for every book */}
 <img src={book.image} alt={book.title} />
+ {/*image for the book*/}
 
 <h3>{book.title}</h3>
 <p>Author: {book.author}</p>

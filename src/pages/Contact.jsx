@@ -4,12 +4,12 @@ function Contact() {
 const [name, setName] = useState("");
 const [email, setEmail] = useState("");
 const [message, setMessage] = useState("");
-const [success, setSuccess] = useState(false);
+const [success, setSuccess] = useState(false);//first form does'nt send =no submit
 
 function handleSubmit(e) {
 e.preventDefault();
 
-setSuccess(true);
+setSuccess(true);//after submit 
 setName("");
 setEmail("");
 setMessage("");
@@ -25,7 +25,7 @@ Have any questions? Feel free to contact us!
 
 <form
 className="contact-form"
-onSubmit={handleSubmit}
+onSubmit={handleSubmit}//for submit
 >
 <label>Full Name</label>
 <input
@@ -59,7 +59,7 @@ Send Message
 
 {success && (
 <p className="success">
-Message submitted successfully! (Demo)
+Message submitted successfully! (Demo){/*for trying only it is not sending*/}
 </p>
 )}
 </form>

@@ -11,7 +11,7 @@ return (
 <Link to="/about">About</Link>
 <Link to="/books">Books</Link>
 <Link to="/contact">Contact</Link>
-<Link to="/cart">Cart ({cartCount})</Link>
+<Link to="/cart">Cart ({cartCount})</Link>{/* nb of books in cart*/} 
 </div>
 </nav>
 );

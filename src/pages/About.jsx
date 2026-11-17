@@ -25,5 +25,5 @@ function About() {
     </div>
   );
 }
-
+{/*title smaller than h1*/}
 export default About;

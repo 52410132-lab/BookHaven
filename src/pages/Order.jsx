@@ -6,20 +6,20 @@ const [name, setName] = useState("");
 const [email, setEmail] = useState("");
 const [address, setAddress] = useState("");
 const [phone, setPhone] = useState("");
-const [success, setSuccess] = useState(false);
+const [success, setSuccess] = useState(false);//order is not sure
 
 const total = cart.reduce(
-(sum, book) => sum + book.price,
+(sum, book) => sum + book.price,//add each book price to the total
 0
-);
+);//calculate the total price of books in cart 
 
 function handleSubmit(e) {
 e.preventDefault();
 
 if (cart.length === 0) return;
-
-setSuccess(true);
-clearCart();
+//if cart is empty = cannot do an order 
+setSuccess(true);//show the message after submit 
+clearCart();//empty the cart
 
 setName("");
 setEmail("");
@@ -31,7 +31,7 @@ return (
 <div className="page">
 <h1>Checkout 📦</h1>
 
-{success ? (
+{success ? (//like if else 
 <div>
 <h2>Order Placed Successfully! ✅</h2>
 <p>Thank you for shopping at Book Haven!</p>
@@ -49,18 +49,18 @@ Continue Shopping
 
 <Link to="/books">
 <button className="btn">
-Browse Books
+Browse Books//in the empty cart page 
 </button>
 </Link>
 </div>
-) : (
+) : ( 
 <div>
-<h2>Order Summary</h2>
+<h2>Order Summary</h2>{/*in conatct page after choosing a book */}
 
-{cart.map((book, index) => (
-<div key={index}>
+{cart.map((book, index) => (//info of each book in the cart
+<div key={index}>{/*give every book a nb to distinguish it*/}
 <p>
-{book.title} - ${book.price.toFixed(2)}
+{book.title} - ${book.price.toFixed(2)} 
 </p>
 </div>
 ))}
