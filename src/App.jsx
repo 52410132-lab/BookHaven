@@ -27,7 +27,7 @@ function App() {
   } //delete all books in cart 
 
   return (
-    <BrowserRouter basename="/BookHaven">
+    <BrowserRouter >
       <Navbar cartCount={cart.length} />
 
       <Routes>
