@@ -27,7 +27,7 @@ function App() {
   } //delete all books in cart 
 
   return (
-    <BrowserRouter >
+    <BrowserRouter basenam={import.meta.env.BASE_URL} >
       <Navbar cartCount={cart.length} />
 
       <Routes>
